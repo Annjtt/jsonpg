@@ -1,0 +1,19 @@
+/* Светлая тема — Liquid Glass Light */
+.theme-light {
+    --bg-gradient: linear-gradient(135deg, #e0f7ff 0%, #f0f4ff 100%);
+    --text-primary: #1a1a1a;
+    --text-secondary: #555;
+    --border-glass: rgba(255, 255, 255, 0.5);
+    --accent-neon: #00aaff;
+    --gradient-text: linear-gradient(90deg, #00aaff, #ff5e94);
+  }
+  
+  /* Тёмная тема — Liquid Glass Dark */
+  .theme-dark {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-glass: rgba(255, 255, 255, 0.1);
+    --accent-neon: #00eeff;
+    --gradient-text: linear-gradient(90deg, #00eeff, #ff2a6d);
+  }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JSONpg — JSON Prompt Generator</title>
+  <!-- Стили -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/liquid-glass.css">
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-light">
+  <!-- Переключатель темы -->
+  <div class="theme-toggle" onclick="toggleTheme()">🌓</div>
+
+  <!-- Основной контейнер -->
+  <div class="app-container">
+    <!-- Хедер -->
+    <header class="app-header glass-card">
+      <h1>JSON<span class="accent">pg</span></h1>
+      <p class="subtitle">Генератор JSON-промтов для Runway Gen-4, Pika, Sora и других AI-видеогенераторов</p>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="app-main">
+      <!-- Форма генерации -->
+      <section class="glass-card form-section">
+        <h2>🔧 Настройка промта</h2>
+        <div id="formContainer"></div>
+        <div class="presets-container" id="presetsContainer"></div>
+      </section>
+
+      <!-- Действия -->
+      <section class="glass-card actions-section">
+        <h2>⚡ Действия</h2>
+        <div class="button-group">
+          <button class="btn-primary" id="generateBtn">✨ Сгенерировать JSON</button>
+          <button class="btn-secondary" id="copyBtn">📋 Скопировать</button>
+          <button class="btn-secondary" id="downloadBtn">💾 Скачать .json</button>
+          <button class="btn-tertiary" id="exampleBtn">🧪 Загрузить пример</button>
+        </div>
+      </section>
+
+      <!-- Результат -->
+      <section class="glass-card result-section">
+        <h2>📊 Результат</h2>
+        <pre id="output" class="json-output">Здесь появится ваш JSON-промт после генерации.</pre>
+      </section>
+
+      <!-- История -->
+      <section class="glass-card history-section">
+        <h2>📚 История</h2>
+        <div id="historyList">Нет сохранённых промтов.</div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Главный скрипт приложения -->
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
