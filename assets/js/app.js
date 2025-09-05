@@ -19,7 +19,6 @@ window.toggleTheme = function() {
     const { renderHistory } = await import('./history.js');
     const { generatePrompt } = await import('./generator.js');
     const { copyToClipboard, downloadJSON } = await import('./utils.js');
-    const { loadExamplePreset } = await import('./presets.js');
   
     initUI();
     renderHistory();
@@ -27,5 +26,4 @@ window.toggleTheme = function() {
     document.getElementById('generateBtn')?.addEventListener('click', generatePrompt);
     document.getElementById('copyBtn')?.addEventListener('click', copyToClipboard);
     document.getElementById('downloadBtn')?.addEventListener('click', downloadJSON);
-    document.getElementById('exampleBtn')?.addEventListener('click', loadExamplePreset);
   });
