@@ -43,6 +43,26 @@ const PRESETS = {
     document.getElementById('audio').value = p.audio;
     document.getElementById('model').value = p.model;
   
+    // Обновляем кастомные селекты
+    setTimeout(() => {
+      const customSelects = document.querySelectorAll('.custom-select');
+      customSelects.forEach(customSelect => {
+        const originalSelect = customSelect.nextElementSibling;
+        if (originalSelect && originalSelect.tagName === 'SELECT') {
+          const value = originalSelect.value;
+          const trigger = customSelect.querySelector('.custom-select-trigger');
+          const selectedOption = customSelect.querySelector(`[data-value="${value}"]`);
+          if (trigger && selectedOption) {
+            trigger.textContent = selectedOption.textContent;
+            customSelect.querySelectorAll('.custom-select-option').forEach(option => {
+              option.classList.remove('selected');
+            });
+            selectedOption.classList.add('selected');
+          }
+        }
+      });
+    }, 0);
+  
     alert(`Пресет "${PRESETS[key].name}" применён!`);
   };
   
