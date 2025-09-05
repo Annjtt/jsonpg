@@ -52,10 +52,29 @@
 
       <!-- История -->
       <section class="glass-card history-section">
-        <h2>📚 История</h2>
-        <div id="historyList">Нет сохранённых промтов.</div>
+        <div class="history-header">
+          <h2>📚 История</h2>
+          <div class="history-controls">
+            <button class="btn-icon" id="clearHistoryBtn" title="Очистить историю">🗑️</button>
+            <button class="btn-icon" id="openHistoryModalBtn" title="Открыть полную историю">👁️</button>
+          </div>
+        </div>
+        <div id="historyList" class="history-list">Нет сохранённых промтов.</div>
       </section>
     </main>
+  </div>
+
+  <!-- Модальное окно истории -->
+  <div id="historyModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>📚 Полная история</h2>
+        <button class="btn-icon modal-close" id="closeHistoryModalBtn">❌</button>
+      </div>
+      <div class="modal-body">
+        <div id="fullHistoryList" class="full-history-list"></div>
+      </div>
+    </div>
   </div>
 
   <!-- Главный скрипт приложения -->

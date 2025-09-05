@@ -16,7 +16,7 @@ window.toggleTheme = function() {
   // Импортируем остальное после загрузки DOM
   document.addEventListener('DOMContentLoaded', async () => {
     const { initUI } = await import('./ui.js');
-    const { renderHistory } = await import('./history.js');
+    const { renderHistory, clearHistory, openHistoryModal, closeHistoryModal } = await import('./history.js');
     const { generatePrompt } = await import('./generator.js');
     const { copyToClipboard, downloadJSON } = await import('./utils.js');
   
@@ -26,4 +26,26 @@ window.toggleTheme = function() {
     document.getElementById('generateBtn')?.addEventListener('click', generatePrompt);
     document.getElementById('copyBtn')?.addEventListener('click', copyToClipboard);
     document.getElementById('downloadBtn')?.addEventListener('click', downloadJSON);
+    
+    // Обработчики для истории
+    const clearBtn = document.getElementById('clearHistoryBtn');
+    const openModalBtn = document.getElementById('openHistoryModalBtn');
+    const closeModalBtn = document.getElementById('closeHistoryModalBtn');
+    
+    if (clearBtn) {
+      clearBtn.addEventListener('click', clearHistory);
+    }
+    if (openModalBtn) {
+      openModalBtn.addEventListener('click', openHistoryModal);
+    }
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener('click', closeHistoryModal);
+    }
+    
+    // Закрытие модального окна при клике вне его
+    document.getElementById('historyModal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'historyModal') {
+        closeHistoryModal();
+      }
+    });
   });
