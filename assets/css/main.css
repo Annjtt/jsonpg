@@ -60,6 +60,18 @@
     position: relative;
     overflow: hidden;
   }
+
+  /* Стили для светлой темы */
+  .theme-light .glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  }
+
+  .theme-light .app-header {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
   
   .glass-card:hover {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
@@ -122,6 +134,13 @@
     font-size: 0.95rem;
     transition: all 0.3s ease;
     outline: none;
+  }
+
+  /* Стили для светлой темы - поля ввода */
+  .theme-light .form-group input,
+  .theme-light .form-group textarea {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8);
   }
   
   .form-group input:focus,
@@ -224,6 +243,12 @@
     justify-content: space-between;
   }
 
+  /* Стили для светлой темы - кастомные селекты */
+  .theme-light .custom-select-trigger {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8);
+  }
+
   .custom-select-trigger:hover {
     border-color: rgba(255, 255, 255, 0.2);
   }
@@ -265,6 +290,13 @@
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
+  }
+
+  /* Стили для светлой темы - выпадающие списки */
+  .theme-light .custom-select-options {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
 
   .custom-select.open .custom-select-options {
@@ -422,6 +454,12 @@
     font-size: 0.85rem;
     transition: all 0.2s;
   }
+
+  /* Стили для светлой темы - кнопки пресетов */
+  .theme-light .preset-btn {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
   
   .preset-btn:hover {
     background: rgba(255, 255, 255, 0.15);
@@ -479,6 +517,12 @@
     backdrop-filter: blur(10px);
     z-index: 100;
     transition: all 0.3s;
+  }
+
+  /* Стили для светлой темы - переключатель темы */
+  .theme-light .theme-toggle {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
   }
   
   .theme-toggle:hover {

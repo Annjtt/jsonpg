@@ -1,3 +1,9 @@
+// ✅ Сразу устанавливаем тему ДО загрузки DOM
+(function() {
+  const savedTheme = localStorage.getItem('jsonpg_theme') || 'dark';
+  document.body.classList.add(`theme-${savedTheme}`);
+})();
+
 // ✅ Сразу регистрируем toggleTheme в window — ДО загрузки DOM
 window.toggleTheme = function() {
     const body = document.body;
@@ -6,10 +12,6 @@ window.toggleTheme = function() {
     body.classList.add(isDark ? 'theme-light' : 'theme-dark');
     localStorage.setItem('jsonpg_theme', isDark ? 'light' : 'dark');
   };
-  
-  // Загружаем сохранённую тему
-  const savedTheme = localStorage.getItem('jsonpg_theme') || 'light';
-  document.body.classList.add(`theme-${savedTheme}`);
   
   // Импортируем остальное после загрузки DOM
   document.addEventListener('DOMContentLoaded', async () => {

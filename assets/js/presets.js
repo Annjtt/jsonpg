@@ -1,15 +1,4 @@
 const PRESETS = {
-    coffee: {
-      name: "☕ Кофе-сцена",
-      data: {
-        prompt: "Девушка в красном свитере с узорами, лицо украшено мандалами, пьёт кофе, который подаёт рука из-за кадра. Мистическая атмосфера.",
-        style: "painterly, magical realism",
-        camera: "static medium close-up",
-        palette: "deep red, gold, teal, warm amber",
-        audio: "soft ambient music, gentle sip sound",
-        model: "Runway Gen-4"
-      }
-    },
     anime: {
       name: "🎨 Аниме-старт",
       data: {
@@ -19,6 +8,72 @@ const PRESETS = {
         palette: "cool blue, grey, soft pink",
         audio: "rain sounds, piano melody",
         model: "Pika Labs"
+      }
+    },
+    cinematic: {
+      name: "🎬 Кинематограф",
+      data: {
+        prompt: "Драматичная сцена в стиле голливудского фильма. Эмоциональный момент с красивым освещением.",
+        style: "cinematic",
+        camera: "pan left to right",
+        palette: "golden hour, warm orange, deep shadows",
+        audio: "epic orchestral music, dramatic sound effects",
+        model: "Runway Gen-4"
+      }
+    },
+    cyberpunk: {
+      name: "🤖 Киберпанк",
+      data: {
+        prompt: "Неоновый город будущего, дождь, отражения в лужах, киберпанк атмосфера.",
+        style: "realistic",
+        camera: "slow zoom in",
+        palette: "neon pink, electric blue, purple, black",
+        audio: "synthwave music, electronic beats, rain",
+        model: "Runway Gen-4"
+      }
+    },
+    nature: {
+      name: "🌿 Природа",
+      data: {
+        prompt: "Красивый лесной пейзаж с солнечными лучами, пробивающимися сквозь листву.",
+        style: "realistic",
+        camera: "static medium close-up",
+        palette: "forest green, golden sunlight, earth tones",
+        audio: "birds singing, wind through leaves, nature sounds",
+        model: "Runway Gen-4"
+      }
+    },
+    fantasy: {
+      name: "✨ Фэнтези",
+      data: {
+        prompt: "Магическая сцена с волшебником, заклинания, искры магии, мистическая атмосфера.",
+        style: "painterly, magical realism",
+        camera: "pan left to right",
+        palette: "magical purple, mystical blue, golden sparks",
+        audio: "fantasy music, magical chimes, mystical sounds",
+        model: "Runway Gen-4"
+      }
+    },
+    retro: {
+      name: "📺 Ретро",
+      data: {
+        prompt: "Винтажная сцена в стиле 80-х, неоновые вывески, ретро автомобили.",
+        style: "3D cartoon",
+        camera: "slow zoom in",
+        palette: "hot pink, cyan, yellow, black",
+        audio: "retro synth music, vintage sound effects",
+        model: "Pika Labs"
+      }
+    },
+    horror: {
+      name: "👻 Хоррор",
+      data: {
+        prompt: "Жуткая атмосфера, тени, туман, мистические элементы ужаса.",
+        style: "realistic",
+        camera: "static medium close-up",
+        palette: "dark shadows, blood red, pale moonlight",
+        audio: "creepy ambient, horror sound effects, whispers",
+        model: "Runway Gen-4"
       }
     }
   };
@@ -67,5 +122,5 @@ const PRESETS = {
   };
   
   export function loadExamplePreset() {
-    applyPreset('coffee');
+    applyPreset('anime');
   }
