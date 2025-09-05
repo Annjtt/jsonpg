@@ -84,16 +84,21 @@ export function renderForm() {
       color_palette: document.getElementById('palette')?.value.split(',').map(s => s.trim()),
       audio_suggestions: document.getElementById('audio')?.value,
       target_model: document.getElementById('model')?.value,
-      aspect_ratio: "9:16",
+      aspect_ratio: "9:16"
+    };
+
+    // Данные для истории (с датой)
+    const historyData = {
+      ...data,
       generated_at: new Date().toISOString()
     };
-  
+
     const output = document.getElementById('output');
     output.textContent = JSON.stringify(data, null, 2);
-  
-    // Сохраняем в историю
+
+    // Сохраняем в историю (с датой)
     import('./history.js').then(module => {
-      module.saveToHistory(data);
+      module.saveToHistory(historyData);
       module.renderHistory();
     });
   }
