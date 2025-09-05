@@ -491,7 +491,7 @@
 
   .history-controls {
     display: flex;
-    gap: 8px;
+    gap: 9px;
   }
 
   .btn-icon {
@@ -527,6 +527,7 @@
   .history-list {
     max-height: 200px;
     overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .history-item {
@@ -589,9 +590,105 @@
     padding: 0;
     width: 90%;
     max-width: 800px;
+    height: 80vh;
     max-height: 80vh;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     animation: modalSlideIn 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Адаптация модального окна для мобильных устройств */
+  @media (max-width: 768px) {
+    .modal-content {
+      margin: 10px;
+      width: calc(100% - 20px);
+      max-width: none;
+      height: calc(100vh - 20px);
+      max-height: calc(100vh - 20px);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      padding: 16px 20px;
+      flex-shrink: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .modal-header h2 {
+      font-size: 1.3rem;
+    }
+
+    .modal-body {
+      padding: 16px 20px;
+      flex: 1;
+      overflow-y: auto;
+      min-height: 0;
+      max-height: none;
+    }
+
+    .full-history-item {
+      padding: 16px;
+    }
+
+    .full-history-item h3 {
+      font-size: 1rem;
+    }
+
+    .full-history-item p {
+      font-size: 0.85rem;
+    }
+  }
+
+  /* Адаптация для очень маленьких экранов */
+  @media (max-width: 480px) {
+    .modal-content {
+      margin: 5px;
+      width: calc(100% - 10px);
+      height: calc(100vh - 10px);
+      max-height: calc(100vh - 10px);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      padding: 12px 16px;
+      flex-shrink: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .modal-header h2 {
+      font-size: 1.1rem;
+    }
+
+    .modal-body {
+      padding: 12px 16px;
+      flex: 1;
+      overflow-y: auto;
+      min-height: 0;
+      max-height: none;
+    }
+
+    .full-history-item {
+      padding: 12px;
+    }
+
+    .full-history-item h3 {
+      font-size: 0.9rem;
+    }
+
+    .full-history-item p {
+      font-size: 0.8rem;
+    }
+
+    .btn-icon {
+      width: 32px;
+      height: 32px;
+      font-size: 1rem;
+    }
   }
 
   .modal-header {
@@ -600,6 +697,7 @@
     align-items: center;
     padding: 20px 30px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
   }
 
   .modal-header h2 {
@@ -618,14 +716,35 @@
 
   .modal-body {
     padding: 20px 30px;
-    max-height: 60vh;
     overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    min-height: 0;
   }
 
   .full-history-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
+  }
+
+  /* Скроллбар для модального окна */
+  .modal-body::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .modal-body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+
+  .modal-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+  }
+
+  .modal-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
   }
 
   .full-history-item {

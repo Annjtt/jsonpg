@@ -48,4 +48,14 @@ window.toggleTheme = function() {
         closeHistoryModal();
       }
     });
+
+    // Закрытие модального окна по клавише Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('historyModal');
+        if (modal && modal.style.display === 'block') {
+          closeHistoryModal();
+        }
+      }
+    });
   });

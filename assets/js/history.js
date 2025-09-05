@@ -72,6 +72,8 @@ export function clearHistory() {
 export function openHistoryModal() {
   const modal = document.getElementById('historyModal');
   modal.style.display = 'block';
+  // Блокируем скролл основной страницы
+  document.body.style.overflow = 'hidden';
   renderFullHistory();
 }
 
@@ -79,6 +81,8 @@ export function openHistoryModal() {
 export function closeHistoryModal() {
   const modal = document.getElementById('historyModal');
   modal.style.display = 'none';
+  // Восстанавливаем скролл основной страницы
+  document.body.style.overflow = '';
 }
 
 // Рендер полной истории в модальном окне
