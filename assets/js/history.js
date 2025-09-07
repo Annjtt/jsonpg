@@ -34,6 +34,7 @@ window.loadFromHistory = function(index) {
   document.getElementById('palette').value = item.color_palette.join(', ');
   document.getElementById('audio').value = item.audio_suggestions;
   document.getElementById('model').value = item.target_model;
+  document.getElementById('aspectRatio').value = item.aspect_ratio || "9:16";
 
   // Обновляем кастомные селекты
   setTimeout(() => {

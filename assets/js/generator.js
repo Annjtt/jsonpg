@@ -53,21 +53,35 @@ export function renderForm() {
           <input type="text" id="palette" placeholder="через запятую" value="deep red, gold, teal">
         </div>
       </div>
+      
+      <!-- Поле аспектного соотношения -->
+      <div class="form-group">
+        <label><span>📐</span> Аспектное соотношение:</label>
+        <select id="aspectRatio">
+          <option value="9:16" selected>9:16 (Вертикальное - Stories, TikTok)</option>
+          <option value="16:9">16:9 (Горизонтальное - YouTube, Cinema)</option>
+          <option value="1:1">1:1 (Квадрат - Instagram)</option>
+          <option value="4:3">4:3 (Классическое)</option>
+          <option value="3:2">3:2 (Фото)</option>
+          <option value="21:9">21:9 (Ультраширокое)</option>
+        </select>
+      </div>
   
       <!-- Блок 3: Аудио и модель -->
       <div class="form-block">
         <h3>🔊 Аудио и модель</h3>
-        <div class="form-group">
-          <label><span>🎵</span> Аудио-подсказки:</label>
-          <input type="text" id="audio" placeholder="музыка, звуки" value="ambient, sip sound">
-        </div>
-        <div class="form-group">
+          <div class="form-group">
           <label><span>🤖</span> Модель:</label>
           <select id="model">
+            <option value="">Без модели</option>
             <option value="Runway Gen-4">Runway Gen-4</option>
             <option value="Pika Labs">Pika Labs</option>
             <option value="Sora-compatible">Sora-compatible</option>
           </select>
+        </div>
+        <div class="form-group">
+          <label><span>🎵</span> Аудио-подсказки:</label>
+          <input type="text" id="audio" placeholder="музыка, звуки" value="ambient, sip sound">
         </div>
       </div>
     `;
@@ -75,6 +89,7 @@ export function renderForm() {
   
   // ✅ ЭКСПОРТИРУЕМ ФУНКЦИЮ
   export function generatePrompt() {
+    const modelValue = document.getElementById('model')?.value;
     const data = {
       prompt: document.getElementById('mainPrompt')?.value.trim() || "Описание отсутствует",
       duration: parseInt(document.getElementById('duration')?.value) || 8,
@@ -83,9 +98,13 @@ export function renderForm() {
       camera: document.getElementById('camera')?.value,
       color_palette: document.getElementById('palette')?.value.split(',').map(s => s.trim()),
       audio_suggestions: document.getElementById('audio')?.value,
-      target_model: document.getElementById('model')?.value,
-      aspect_ratio: "9:16"
+      aspect_ratio: document.getElementById('aspectRatio')?.value || "9:16"
     };
+    
+    // Добавляем модель только если она выбрана
+    if (modelValue) {
+      data.target_model = modelValue;
+    }
 
     // Данные для истории (с датой)
     const historyData = {

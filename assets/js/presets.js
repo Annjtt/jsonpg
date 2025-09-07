@@ -7,7 +7,8 @@ const PRESETS = {
         camera: "slow zoom in",
         palette: "cool blue, grey, soft pink",
         audio: "rain sounds, piano melody",
-        model: "Pika Labs"
+        model: "Pika Labs",
+        aspectRatio: "9:16"
       }
     },
     cinematic: {
@@ -18,7 +19,8 @@ const PRESETS = {
         camera: "pan left to right",
         palette: "golden hour, warm orange, deep shadows",
         audio: "epic orchestral music, dramatic sound effects",
-        model: "Runway Gen-4"
+        model: "Runway Gen-4",
+        aspectRatio: "16:9"
       }
     },
     cyberpunk: {
@@ -29,7 +31,8 @@ const PRESETS = {
         camera: "slow zoom in",
         palette: "neon pink, electric blue, purple, black",
         audio: "synthwave music, electronic beats, rain",
-        model: "Runway Gen-4"
+        model: "Runway Gen-4",
+        aspectRatio: "21:9"
       }
     },
     nature: {
@@ -40,7 +43,8 @@ const PRESETS = {
         camera: "static medium close-up",
         palette: "forest green, golden sunlight, earth tones",
         audio: "birds singing, wind through leaves, nature sounds",
-        model: "Runway Gen-4"
+        model: "Runway Gen-4",
+        aspectRatio: "16:9"
       }
     },
     fantasy: {
@@ -51,7 +55,8 @@ const PRESETS = {
         camera: "pan left to right",
         palette: "magical purple, mystical blue, golden sparks",
         audio: "fantasy music, magical chimes, mystical sounds",
-        model: "Runway Gen-4"
+        model: "Runway Gen-4",
+        aspectRatio: "16:9"
       }
     },
     retro: {
@@ -62,7 +67,8 @@ const PRESETS = {
         camera: "slow zoom in",
         palette: "hot pink, cyan, yellow, black",
         audio: "retro synth music, vintage sound effects",
-        model: "Pika Labs"
+        model: "Pika Labs",
+        aspectRatio: "1:1"
       }
     },
     horror: {
@@ -73,7 +79,8 @@ const PRESETS = {
         camera: "static medium close-up",
         palette: "dark shadows, blood red, pale moonlight",
         audio: "creepy ambient, horror sound effects, whispers",
-        model: "Runway Gen-4"
+        model: "Runway Gen-4",
+        aspectRatio: "9:16"
       }
     }
   };
@@ -96,7 +103,8 @@ const PRESETS = {
     document.getElementById('camera').value = p.camera;
     document.getElementById('palette').value = p.palette;
     document.getElementById('audio').value = p.audio;
-    document.getElementById('model').value = p.model;
+    document.getElementById('model').value = p.model || "";
+    document.getElementById('aspectRatio').value = p.aspectRatio || "9:16";
   
     // Обновляем кастомные селекты
     setTimeout(() => {
